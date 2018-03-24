@@ -1,0 +1,69 @@
+hover()
+	&:hover
+		opacity .7
+		text-decoration none
+
+lineClamp(lineHeight, line)
+	overflow: hidden
+	display: -webkit-box
+	-webkit-box-orient: vertical
+	word-break: break-all
+	height calc(lineHeight * line)
+	-webkit-line-clamp line
+	line-clamp line
+	box-orient: vertical
+	word-wrap break-word
+
+depth = foo bar
+zIndex(name)
+	z-index: index(depth, name) + 1
+
+placeholderColor(color,size)
+	&:placeholder-shown
+		color: color
+		font-size:size
+
+	// Webkit
+	&::-webkit-input-placeholder
+		color:color
+		font-size:size
+		opacity: 1
+
+	// Firefox 18-
+	&:-moz-placeholder
+		color:color
+		font-size:size
+
+	// Firefox 19+
+	&::-moz-placeholder
+		color:color
+		font-size:size
+		opacity: 1
+
+	// IE 10+
+	&:-ms-input-placeholder
+		color:color
+		font-size:size
+
+spriteResponsive($sprite)
+	{block}
+	white-space nowrap
+	text-indent 100%
+	overflow hidden
+	font-size 0
+
+	$sprite_w = $sprite[6]
+	$sprite_h = $sprite[7]
+	$image_w = $sprite[4]
+	$image_h = $sprite[5]
+	$offset_x = $sprite[0]
+	$offset_y = $sprite[1]
+
+	background-image url($sprite[8])
+	background-size ($sprite_w / $image_w * 100) % ($sprite_h / $image_h * 100) %
+	background-position ($offset_x / ($sprite_w - $image_w) * 100) % ($offset_y / ($sprite_h - $image_h) * 100) %
+
+	&::after
+		content ''
+		display block
+		padding-top ($image_h / $image_w * 100) %

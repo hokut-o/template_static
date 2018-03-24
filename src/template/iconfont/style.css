@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "<%= fontName %>";
+  src: url('<%= fontPath %><%= fontName %>.eot?<%= date %>');
+  src: url('<%= fontPath %><%= fontName %>.eot??#iefix?<%= date %>') format('eot'),
+  url('<%= fontPath %><%= fontName %>.woff?<%= date %>') format('woff'),
+  url('<%= fontPath %><%= fontName %>.ttf?<%= date %>') format('truetype'),
+  url('<%= fontPath %><%= fontName %>.svg#<%= fontName %>?<%= date %>') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+<%= glyphs.map(function(glyph){ return '.' + className + glyph.name + ':before' }).join(',\n') %>,
+<%= glyphs.map(function(glyph){ return '.' + className + glyph.name + '--after:after' }).join(',\n') %> {
+  font-family: "<%= fontName %>";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  vertical-align: top;
+  display: inline-block;
+}
+
+<% _.each(glyphs, function(glyph) { %>.<%= className %><%= glyph.name %>:before { content: "\<%= glyph.codepoint.toString(16).toUpperCase() %>"; }
+<% }); %>
+
+<% _.each(glyphs, function(glyph) { %>.<%= className %><%= glyph.name + '--after' %>:after { content: "\<%= glyph.codepoint.toString(16).toUpperCase() %>"; }
+<% }); %>

@@ -1,0 +1,10 @@
+# OSX
+.DS_Store
+
+# PhpStrom
+.idea
+
+# gulp
+dest
+build
+node_modules
