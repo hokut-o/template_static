@@ -1,4 +1,5 @@
 # 静的ページ制作用テンプレート
+![2477679869-helloworld](https://user-images.githubusercontent.com/10446161/38011766-ac4c1bd6-3299-11e8-8ae6-f70d1b462f49.gif)
 
 ## タスクランナー
 * [gulp.js](https://gulpjs.com/)
