@@ -52,7 +52,7 @@ https://qiita.com/RinoTsuka/items/4181efd43d072e246519
 * placeholder制御用
 * spriteのレスポンシブ対応用
 
-なんかが現状入っています。
+が組み込み済み。
 
 ## IE用ポリフィル
 * [picturefill](https://github.com/scottjehl/picturefill)（picture要素表示用）
@@ -83,9 +83,8 @@ $ gulp
 * ソースマップ生成
 
 ### Browsersync
-* ローカルサーバー建てる用
-* index: 'index.html' オプションでルートの起動ファイルを設定できます
-* `gulp-connect-php` でPHP対応をしています
+* ローカルサーバー
+* PHP組み込み時はproxyオプションを使用
 
 ## アイコンフォント生成タスク
 ```
