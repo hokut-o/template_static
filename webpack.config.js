@@ -21,7 +21,7 @@ module.exports = {
 						options: {
 							cacheDirectory: true,
 							presets: [
-								['env', {'modules': false}]
+								['@babel/preset-env', {'modules': false}]
 							]
 						}
 					}
