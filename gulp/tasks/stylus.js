@@ -11,7 +11,7 @@ import rupture from 'rupture'
 import paths from '../config';
 
 gulp.task('stylus', () => {
-	return gulp.src(paths.stylus_src)
+	return gulp.src(`${paths.stylus_src}`)
 	.pipe(sourcemaps.init())
 	.pipe(plumber())
 	.pipe(stylus({
@@ -26,13 +26,13 @@ gulp.task('stylus', () => {
 		}),
 		autoprefixer({
 			remove: false,
-			"browsers": ["last 4 versions"]
+			grid: true
 		})
 	]))
 	.on('error', function(err) {
 		console.log(err.message);
 	})
 	.pipe(sourcemaps.write('.'))
-	.pipe(gulp.dest(paths.stylus_dest))
+	.pipe(gulp.dest(`${paths.stylus_dest}`))
 	.pipe(browserSync.stream());
 });

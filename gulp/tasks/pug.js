@@ -22,7 +22,7 @@ gulp.task('yaml', () => {
 });
 
 gulp.task('pugAll', ['yaml'], () => {
-	return gulp.src([paths.pug_src, paths.pug_exclude])
+	return gulp.src([`${paths.pug_src}, ${paths.pug_exclude}`])
 	.pipe(plumber())
 	.pipe(pug({
 		pretty: true,
@@ -35,7 +35,7 @@ gulp.task('pugAll', ['yaml'], () => {
 });
 
 gulp.task('pug', ['yaml'], () => {
-	return gulp.src(paths.pug_src)
+	return gulp.src(`${paths.pug_src}`)
 	.pipe(plumber())
 	.pipe(changed('dest', {extension: '.html'}))
 	.pipe(gulpif(global.isWatching, cached('pug')))

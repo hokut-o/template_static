@@ -1,11 +1,11 @@
 import gulp from 'gulp';
 import browserSync from 'browser-sync';
-import paths       from '../config';
+import paths from '../config';
 
 gulp.task('server', () => {
 	browserSync({
 		server: {
-			baseDir: paths.dest,
+			baseDir: `${paths.dest}`,
 		},
 		ghostMode: {
 			clicks: false,

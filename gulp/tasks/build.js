@@ -22,14 +22,14 @@ import postcss from "gulp-postcss";
 let locals = {};
 
 gulp.task('copyimg', () => {
-	return gulp.src(['src/images/**'])
-	.pipe(del([paths.distImg + '/*.+(jpg|jpeg|png|gif|svg)', paths.distImg + '/**/*.+(jpg|jpeg|png|gif|svg)', '!' + paths.distImg + '/sprite/**']))
-	.pipe(gulp.dest(paths.distImg))
+	return gulp.src([`${paths.img_src}**`])
+	.pipe(del([`${paths.img_dest}/*.{jpg,jpeg,png,gif,svg}`, `${paths.img_dest}/**/*.{jpg,jpeg,png,gif,svg}`, `!${paths.img_dest}sprite/**`]))
+	.pipe(gulp.dest(`${paths.distImg}`))
 });
 
 gulp.task('yamlBuild', () => {
 	locals = {};
-	return gulp.src(paths.yaml_src)
+	return gulp.src(`${paths.yaml_src}`)
 	.pipe(plumber())
 	.pipe(vinylYamlData())
 	.pipe(deepExtend(locals))
@@ -37,11 +37,11 @@ gulp.task('yamlBuild', () => {
 
 gulp.task("webpackBuild", () => {
 	return webpackStream(webpackConfig, webpack)
-	.pipe(gulp.dest(paths.js_build))
+	.pipe(gulp.dest(`${paths.js_build}`))
 });
 
 gulp.task('imgBuild', () => {
-	return gulp.src(paths.img_src + '**/*.+(jpg|jpeg|png|gif)')
+	return gulp.src(`${paths.img_src}**/*.{jpg,jpeg,png,gif}`)
 	.pipe(imagemin([
 		imageminPng(),
 		imageminJpg(),
@@ -52,22 +52,22 @@ gulp.task('imgBuild', () => {
 });
 
 gulp.task('svgCopy', () => {
-	return gulp.src(paths.img_src + '**/*.svg')
+	return gulp.src(`${paths.img_src}**/*.svg`)
 	.pipe(gulp.dest(paths.img_build));
 });
 
 gulp.task('fontCopy', () => {
-	return gulp.src(paths.dest + 'font/*.*')
-	.pipe(gulp.dest('build/font/'));
+	return gulp.src(`${paths.dest}font/*.*`)
+	.pipe(gulp.dest(`build/font/`));
 });
 
 gulp.task('phpCopy', () => {
-	return gulp.src(paths.dest + '**/*.php')
-	.pipe(gulp.dest(paths.build));
+	return gulp.src(`${paths.dest}**/*.php`)
+	.pipe(gulp.dest(`${paths.build}`));
 });
 
 gulp.task('stylusBuild', () => {
-	return gulp.src(paths.stylus_src)
+	return gulp.src(`${paths.stylus_src}`)
 	.pipe(plumber())
 	.pipe(stylus({
 		use: [rupture()],
@@ -86,11 +86,11 @@ gulp.task('stylusBuild', () => {
 	.on('error', (err) => {
 		console.log(err.message);
 	})
-	.pipe(gulp.dest(paths.stylus_build))
+	.pipe(gulp.dest(`${paths.stylus_build}`))
 });
 
 gulp.task('pugBuild', ['yamlBuild'], () => {
-	return gulp.src(paths.pug_src)
+	return gulp.src(`${paths.pug_src}`)
 	.pipe(plumber())
 	.pipe(pug({
 		pretty: true
@@ -98,7 +98,7 @@ gulp.task('pugBuild', ['yamlBuild'], () => {
 	.on('error', (err) => {
 		console.log(err.message);
 	})
-	.pipe(gulp.dest(paths.build));
+	.pipe(gulp.dest(`${paths.build}`));
 });
 
 gulp.task('build', (cb) => {
