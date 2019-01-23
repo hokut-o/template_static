@@ -31,18 +31,18 @@ gulp.task('iconfont', () => {
 			className: 'c-icon--',
 			date: date
 		};
-		gulp.src(paths.iconfont_template_src + '*.css')
+		gulp.src(`${paths.template_src}iconfont/*.css`)
 		.pipe(consolidate('lodash', options))
-		.pipe(gulp.dest(`${paths.iconfont_template_dest}`))
+		.pipe(gulp.dest(`${paths.template_dest}iconfont`))
 		.pipe(rename({
 			basename: 'iconfont',
 			extname: '.styl'
 		}))
 		.pipe(gulp.dest(`${paths.iconfont_stylus_dest}`));
 
-		gulp.src(paths.iconfont_template_src + '*.html')
+		gulp.src(`${paths.template_src}iconfont/index.html`)
 		.pipe(consolidate('lodash', options))
-		.pipe(gulp.dest(`${paths.iconfont_template_dest}`));
+		.pipe(gulp.dest(`${paths.template_dest}iconfont`));
 	})
 	.pipe(gulp.dest(`${paths.iconfont_dest}`));
 });

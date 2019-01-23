@@ -1,5 +1,3 @@
-import HardSourceWebpackPlugin from 'hard-source-webpack-plugin'
-
 module.exports = {
 	mode: 'development',
 	entry: './src/js/app.js',
@@ -7,9 +5,6 @@ module.exports = {
 		path: `${__dirname}/dest/js`,
 		filename: 'app.js'
 	},
-	plugins: [
-		new HardSourceWebpackPlugin()
-	],
 	module: {
 		rules: [
 			{

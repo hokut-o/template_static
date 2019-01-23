@@ -80,7 +80,7 @@ gulp.task('stylusBuild', () => {
 		}),
 		autoprefixer({
 			remove: false,
-			"browsers": ["last 4 versions"]
+			grid: true
 		})
 	]))
 	.on('error', (err) => {

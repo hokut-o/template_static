@@ -1,5 +1,4 @@
 # 静的ページ制作用テンプレート
-![2477679869-helloworld](https://user-images.githubusercontent.com/10446161/38011766-ac4c1bd6-3299-11e8-8ae6-f70d1b462f49.gif)
 
 ## タスクランナー
 * [gulp.js](https://gulpjs.com/)
@@ -44,7 +43,7 @@ https://qiita.com/RinoTsuka/items/4181efd43d072e246519
 このあたりを参考にして頑張ろう。
 
 ### Mixin
-`./src/stylus/foundation/mixin.styl` を参照。
+`/src/stylus/foundation/mixin.styl` を参照。
 
 * hover
 * line-clamp
@@ -86,7 +85,7 @@ $ gulp
 * ローカルサーバー
 * PHP組み込み時はproxyオプションを使用
 
-## アイコンフォント生成タスク
+## アイコンフォント生成
 ```
 $ gulp iconfont
 ```
@@ -101,7 +100,7 @@ $ gulp iconfont
 ### template
 `./dest/template/iconfont/` にアイコンフォントの一覧が出力されます
 
-## WebFontサブセット化タスク
+## WebFontサブセット化
 ```
 $ gulp webfont
 ```
@@ -110,7 +109,8 @@ otf　→　ttf　は行っていないので、必要であれば
 https://github.com/HAKASHUN/manabi/blob/master/src/content/posts/2015/font.md
 このあたりを参考にタスクに組み込んでみてください。
 
-## PNGスプライト生成タスク
+
+## PNGスプライト生成
 ```
 $ gulp spritePng
 ```
@@ -119,11 +119,41 @@ $ gulp spritePng
 `./src/stylus/object/component/sprite.styl`
 にstylusが出力されます。
 
-## SVGスプライト生成タスク
+
+## SVGスプライト生成
 ```
 $ gulp spriteSvg
 ```
-`./src/sprite/*.svg`　→ 　`./dest/img/sprite.svg`に出力されます。
+`/src/sprite/*.svg`　→ 　`/src/img/sprite.svg`に出力されます。
+
+### template
+
+`/dest/template/svg/` にSVGスプライトの一覧が出力されます
+
+
+## SVGスプライト（インライン）生成
+
+```
+$ gulp spriteSvgInline
+```
+
+### template
+
+`/dest/template/svgsprite-inline` に組込み用のpugファイルが出力されます
+
+
+## favicon生成
+
+- [Favicon Generator for Gulp](https://realfavicongenerator.net/favicon/gulp#.XEg9nc_7Qsk) でgulpのタスクとfaviconData.json（設定ファイル）が生成できるので、それをタスクを`favicon.js`にペースト、faviconData.jsonをルートのものに上書き。
+
+```
+$ gulp favicon
+```
+
+`/src/template/favicon/favicon.pug`にテンプレートが生成され、
+
+`/src/img/favicon`に画像、xml、webmanifestが生成されます。
+
 
 ## デプロイ用タスク
 ```
@@ -133,8 +163,8 @@ $ gulp build
 
 * `src/pug` から コンパイルされたhtml
 * `src/img` から 圧縮されたイメージ
-* `src/stylus` からコンパイルされたミニファイされたcss
-* `src/js` からミニファイされたjavascript
-* svg、font、PHPファイルのコピー
+* `src/stylus` からコンパイル・ミニファイされたcss
+* `src/js` からバンドル・ミニファイされたjavascript
+* svg、fontファイルのコピー
 
 が生成されます。

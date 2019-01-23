@@ -22,7 +22,7 @@ gulp.task('yaml', () => {
 });
 
 gulp.task('pugAll', ['yaml'], () => {
-	return gulp.src([`${paths.pug_src}, ${paths.pug_exclude}`])
+	return gulp.src([`${paths.pug_src}`,`${paths.pug_exclude}`])
 	.pipe(plumber())
 	.pipe(pug({
 		pretty: true,
