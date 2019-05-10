@@ -4,7 +4,8 @@
 			[
 				"@babel/preset-env",
 				{
-					"useBuiltIns": "usage"
+					"useBuiltIns": "usage",
+					"corejs": 3
 				}
 			]
 		]
@@ -13,14 +14,14 @@
 		"last 2 versions"
 	],
 	"devDependencies": {
-		"autoprefixer": "^9.4.6",
+		"autoprefixer": "^9.5.1",
 		"babel-cli": "^6.26.0",
 		"babel-loader": "^8.0.5",
 		"babel-preset-env": "^1.7.0",
-		"browser-sync": "^2.26.3",
+		"browser-sync": "^2.26.5",
 		"css-mqpacker": "^7.0.0",
 		"deep-extend-stream": "^4.0.0-0",
-		"del": "^3.0.0",
+		"del": "^4.1.1",
 		"fs": "^0.0.1-security",
 		"gulp": "^3.9.1",
 		"gulp-cached": "^1.1.1",
@@ -36,16 +37,16 @@
 		"gulp-pug": "^4.0.1",
 		"gulp-pug-inheritance": "^0.2.1",
 		"gulp-rename": "^1.4.0",
-		"gulp-sourcemaps": "^2.6.4",
+		"gulp-sourcemaps": "^2.6.5",
 		"gulp-stylus": "^2.7.0",
-		"gulp-svgmin": "^2.1.0",
+		"gulp-svgmin": "^2.2.0",
 		"gulp-svgstore": "^7.0.1",
 		"gulp.spritesmith": "^6.9.0",
 		"imagemin-gifsicle": "^6.0.1",
 		"imagemin-jpeg-recompress": "^6.0.0",
 		"imagemin-pngquant": "^7.0.0",
-		"jquery": "^3.3.1",
-		"lazysizes": "^4.1.5",
+		"jquery": "^3.4.1",
+		"lazysizes": "^5.0.0-rc2",
 		"merge-stream": "^1.0.1",
 		"picturefill": "^3.0.3",
 		"require-dir": "^1.2.0",
@@ -57,16 +58,17 @@
 		"vinyl-buffer": "^1.0.1",
 		"vinyl-source-stream": "^2.0.0",
 		"vinyl-yaml-data": "^2.0.1",
-		"webpack": "^4.29.0",
+		"webpack": "^4.31.0",
 		"webpack-stream": "^5.2.1"
 	},
 	"dependencies": {
-		"@babel/core": "^7.2.2",
-		"@babel/preset-env": "^7.3.1",
-		"@babel/register": "^7.0.0",
+		"@babel/core": "^7.4.4",
+		"@babel/preset-env": "^7.4.4",
+		"@babel/register": "^7.4.4",
+		"core-js": "3",
 		"gulp-html2jade": "^1.1.2",
 		"gulp-inject": "^5.0.2",
-		"gulp-real-favicon": "^0.3.1",
+		"gulp-real-favicon": "^0.3.2",
 		"gulp-svg-sprite": "^1.5.0",
 		"gulp-watch": "^5.0.1"
 	}
