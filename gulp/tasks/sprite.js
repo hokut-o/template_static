@@ -57,9 +57,19 @@ gulp.task('spriteSvg', () => {
 				{
 					svgo: {
 						plugins: [
+							{collapseGroups: false},
 							{
-								// plugin記述
+								cleanupIDs: {
+									remove: false,
+								}
 							},
+							{
+								prefixIds: {
+									prefix: "test"
+								}
+							},
+							{removeUnknownsAndDefaults: false},
+							{removeViewBox: false},
 						]
 					}
 				}
