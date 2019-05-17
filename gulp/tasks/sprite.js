@@ -34,50 +34,58 @@ gulp.task('spritePng', () => {
 	return merge(imgStream, cssStream);
 });
 
-
 //svg
 gulp.task('spriteSvg', () => {
 	return gulp.src(`${paths.sprite_src}svg/*.svg`)
 	.pipe(svgSprite({
 		mode: {
+			// SVGファイルをsymbol要素としてまとめる。
 			symbol: {
-				// スプライト画像を置くディレクトリ名
 				dest: './',
-				// スプライト画像のファイル名
+				// 出力するファイル名。
 				sprite: 'sprite.svg',
-				// スプライト画像のプレビュー用HTML
-				example: {
-					dest: '../../dest/template/svg/sprite.html',
-				}
 			},
 		},
-		// mode
 		shape: {
-			transform: [
-				{
-					svgo: {
-						plugins: [
-							{collapseGroups: false},
-							{
-								cleanupIDs: {
-									remove: false,
-								}
-							},
-							{
-								prefixIds: {
-									prefix: "test"
-								}
-							},
-							{removeUnknownsAndDefaults: false},
-							{removeViewBox: false},
-						]
-					}
-				}
-			]
-		}
+			transform: [{
+				svgo: {
+					plugins: [
+						// `style`属性を削除する。
+						{removeStyleElement: true},
+						// viewBox属性を削除する（widthとheight属性がある場合）。
+						// 表示が崩れる原因になるので削除しない。
+						{removeViewBox: false},
+						// <metadata>を削除する。
+						// 追加したmetadataを削除する必要はない。
+						{removeMetadata: false},
+						// SVGの仕様に含まれていないタグや属性、id属性やversion属性を削除する。
+						// 追加した要素を削除する必要はない。
+						{removeUnknownsAndDefaults: false},
+						// コードが短くなる場合だけ<path>に変換する。
+						// アニメーションが動作しない可能性があるので変換しない。
+						{convertShapeToPath: false},
+						// 重複や不要な`<g>`タグを削除する。
+						// アニメーションが動作しない可能性があるので変換しない。
+						{collapseGroups: false},
+						// SVG内に<style>や<script>がなければidを削除する。
+						// idにアンカーが貼られていたら削除せずにid名を縮小する。
+						// id属性は動作の起点となることがあるため削除しない。
+						{cleanupIDs: false},
+					],
+				},
+			}],
+		},
+		svg: {
+			// xml宣言を出力する。
+			xmlDeclaration: true,
+			// DOCTYPE宣言を出力する。
+			doctypeDeclaration: false,
+			//IDに名前属性を追加する。
+			//IDは手動で設定済みなので追加しない。
+			namespaceIDs: false
+		},
 	}))
-	// 書き出し先
-	.pipe(gulp.dest(`${paths.img_src}`));
+	.pipe(gulp.dest(`${paths.img_src}`))
 });
 
 // svg inline

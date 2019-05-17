@@ -1204,6 +1204,11 @@ ansi-colors@^3.2.1:
   resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-3.2.3.tgz#57d35b8686e851e2cc04c403f1c00203976a1813"
   integrity sha512-LEHHyuhlPY3TmuUYMh2oz89lTShfvgbmzaBcxve9t/9Wuy7Dwf4yoAKcND7KFT1HAQfqZ12qtc+DUrBMeKF9nw==
 
+ansi-colors@^3.2.4:
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-3.2.4.tgz#e3a3da4bfbae6c86a9c285625de124a234026fbf"
+  integrity sha512-hHUXGagefjN2iRrID63xckIvotOXOojhQKWIPUZ4mNUZ9nLZW+7FMNoE1lOkEhNWYsx/7ysGIuJYCiMAA9FnrA==
+
 ansi-cyan@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/ansi-cyan/-/ansi-cyan-0.1.1.tgz#538ae528af8982f28ae30d86f2f17456d2609873"
@@ -1677,15 +1682,15 @@ babel-helpers@^6.24.1:
     babel-runtime "^6.22.0"
     babel-template "^6.24.1"
 
-babel-loader@^8.0.5:
-  version "8.0.5"
-  resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-8.0.5.tgz#225322d7509c2157655840bba52e46b6c2f2fe33"
-  integrity sha512-NTnHnVRd2JnRqPC0vW+iOQWU5pchDbYXsG2E6DMXEpMfUcQKclF9gmf3G3ZMhzG7IG9ji4coL0cm+FxeWxDpnw==
+babel-loader@^8.0.6:
+  version "8.0.6"
+  resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-8.0.6.tgz#e33bdb6f362b03f4bb141a0c21ab87c501b70dfb"
+  integrity sha512-4BmWKtBOBm13uoUwd08UwjZlaw3O9GWf456R9j+5YykFZ6LUIjIKLc0zEZf+hauxPOJs96C8k6FvYD09vWzhYw==
   dependencies:
     find-cache-dir "^2.0.0"
     loader-utils "^1.0.2"
     mkdirp "^0.5.1"
-    util.promisify "^1.0.0"
+    pify "^4.0.1"
 
 babel-messages@^6.23.0:
   version "6.23.0"
@@ -5414,6 +5419,16 @@ gulp-postcss@^8.0.0:
     postcss-load-config "^2.0.0"
     vinyl-sourcemaps-apply "^0.2.1"
 
+gulp-print@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/gulp-print/-/gulp-print-5.0.2.tgz#8f379148218d2e168461baa74352e11d1bf7aa75"
+  integrity sha512-iIpHMzC/b3gFvVXOfP9Jk94SWGIsDLVNUrxULRleQev+08ug07mh84b1AOlW6QDQdmInQiqDFqJN1UvhU2nXdg==
+  dependencies:
+    ansi-colors "^3.2.4"
+    fancy-log "^1.3.3"
+    map-stream "0.0.7"
+    vinyl "^2.2.0"
+
 gulp-pug-inheritance@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/gulp-pug-inheritance/-/gulp-pug-inheritance-0.2.1.tgz#2f649e274d6045d918671b96b6cbdd935f4917b1"
@@ -6837,10 +6852,10 @@ lazy-req@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/lazy-req/-/lazy-req-1.1.0.tgz#bdaebead30f8d824039ce0ce149d4daa07ba1fac"
 
-lazysizes@^5.0.0-rc2:
-  version "5.0.0-rc2"
-  resolved "https://registry.yarnpkg.com/lazysizes/-/lazysizes-5.0.0-rc2.tgz#4ee2435ebde135a8a4ebe4cd11f8b619109d9cda"
-  integrity sha512-mg8+zbtz+HproNmNDcwME4p4PS4nQnYSLJLzbt7vO1aB9H4noWiDrnSXPB7MJjOOBBYRnGn3HrsdhbsdUWX1lw==
+lazysizes@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/lazysizes/-/lazysizes-5.0.0.tgz#b3f14f006940085f2c56b8b0d302da9e8d4aed75"
+  integrity sha512-igrN2RCmK7YBjy6w4PfKk+lfi52VrniM0jxChsCGBs8hGNv6P1RPCvMnl4kTuWIzwnTBfPlK8krxu6Mppc9fgA==
 
 lazystream@^1.0.0:
   version "1.0.0"
@@ -11145,7 +11160,7 @@ util-deprecate@^1.0.1, util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
 
-util.promisify@^1.0.0, util.promisify@~1.0.0:
+util.promisify@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/util.promisify/-/util.promisify-1.0.0.tgz#440f7165a459c9a16dc145eb8e72f35687097030"
   dependencies:
