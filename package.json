@@ -68,7 +68,6 @@
 		"core-js": "3",
 		"gulp-html2jade": "^1.1.2",
 		"gulp-inject": "^5.0.2",
-		"gulp-print": "^5.0.2",
 		"gulp-real-favicon": "^0.3.2",
 		"gulp-svg-sprite": "^1.5.0",
 		"gulp-watch": "^5.0.1"
