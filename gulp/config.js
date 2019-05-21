@@ -7,7 +7,7 @@ const paths = {
 	js_dest: './dest/js/',
 	js_build: './build/js/',
 
-	stylus_src: './src/stylus/app.styl',
+	stylus_src: './src/stylus/',
 	stylus_dest: './dest/css/',
 	stylus_component_dest: './src/stylus/object/component/',
 	stylus_build: './build/css/',

@@ -11,7 +11,7 @@ import rupture from 'rupture'
 import paths from '../config';
 
 gulp.task('stylus', () => {
-	return gulp.src(`${paths.stylus_src}`)
+	return gulp.src(`${paths.stylus_src}app.styl`)
 	.pipe(sourcemaps.init())
 	.pipe(plumber())
 	.pipe(stylus({
