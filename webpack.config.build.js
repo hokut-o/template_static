@@ -1,9 +1,25 @@
+import TerserPlugin from "terser-webpack-plugin"
+
 module.exports = {
 	mode: 'production',
 	entry: './src/js/app.js',
 	output: {
 		path: `${__dirname}/dest/js`,
 		filename: 'app.js'
+	},
+	optimization: {
+		minimizer: [
+			new TerserPlugin({
+				terserOptions: {
+					output: {
+						comments: false,
+					},
+					compress: {
+						drop_console: true,
+					},
+				},
+			}),
+		],
 	},
 	module: {
 		rules: [

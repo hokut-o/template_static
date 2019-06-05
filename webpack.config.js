@@ -5,6 +5,7 @@ module.exports = {
 		path: `${__dirname}/dest/js`,
 		filename: 'app.js'
 	},
+	devtool: 'source-map',
 	module: {
 		rules: [
 			{
