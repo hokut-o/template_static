@@ -1,3 +1,4 @@
 ---
-  id: "01"
-  bar: "foobar"
+greeting:
+  -
+    text: "Hello, World"

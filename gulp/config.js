@@ -3,18 +3,17 @@ const paths = {
 	img_dest: './dest/img/',
 	img_build: './build/img/',
 
-	js_src: './src/js/',
+	js_src: './src/js/app.js',
 	js_dest: './dest/js/',
 	js_build: './build/js/',
 
-	stylus_src: './src/stylus/',
+	stylus_src: './src/stylus/app.styl',
 	stylus_dest: './dest/css/',
 	stylus_component_dest: './src/stylus/object/component/',
 	stylus_build: './build/css/',
 
 	pug_src: './src/pug/**/*.pug',
-	pug_include: './src/pug/include/',
-	pug_exclude: '!./src/pug/**/_*.pug',
+	pug_include: './src/pug/include/**/*.pug',
 
 	yaml_src: './src/yaml/**/*.y{,a}ml',
 	yaml_dest: './dest/json/',

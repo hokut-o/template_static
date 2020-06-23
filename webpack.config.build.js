@@ -1,25 +1,26 @@
-import TerserPlugin from "terser-webpack-plugin"
+import TerserPlugin from "terser-webpack-plugin";
 
 module.exports = {
-	mode: 'production',
-	entry: './src/js/app.js',
+	mode: "production",
+	entry: "./src/js/app.js",
 	output: {
 		path: `${__dirname}/dest/js`,
-		filename: 'app.js'
+		filename: "app.js"
 	},
 	optimization: {
 		minimizer: [
 			new TerserPlugin({
+				extractComments: false,
 				terserOptions: {
 					output: {
-						comments: false,
+						comments: false
 					},
 					compress: {
-						drop_console: true,
-					},
-				},
-			}),
-		],
+						drop_console: true
+					}
+				}
+			})
+		]
 	},
 	module: {
 		rules: [
@@ -28,11 +29,9 @@ module.exports = {
 				exclude: /node_modules/,
 				use: [
 					{
-						loader: 'babel-loader',
+						loader: "babel-loader",
 						options: {
-							presets: [
-								['@babel/preset-env', {'modules': false}]
-							]
+							presets: [["@babel/preset-env", { modules: false }]]
 						}
 					}
 				]

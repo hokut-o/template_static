@@ -2,9 +2,9 @@
 .DS_Store
 
 # PhpStrom
-.idea
+.idea/
 
 # gulp
-dest
-build
-node_modules
+dest/
+build/
+node_modules/
